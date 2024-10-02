@@ -4,6 +4,7 @@ import { FC, ReactNode, MouseEvent } from "react";
 interface CustomButtonProps {
   id: string;
   label: string;
+  ariaLabel: string;
   func: (e: MouseEvent<HTMLButtonElement>) => void;
   endIcon?: ReactNode;
   startIcon?: ReactNode;
@@ -25,6 +26,7 @@ export const CustomButton: FC<CustomButtonProps> = ({
   endIcon,
   startIcon,
   variant,
+  ariaLabel,
 }) => {
   return (
     <Button
@@ -33,6 +35,7 @@ export const CustomButton: FC<CustomButtonProps> = ({
       onClick={func}
       endIcon={endIcon}
       startIcon={startIcon}
+      aria-label={ariaLabel}
     >
       {label}
     </Button>

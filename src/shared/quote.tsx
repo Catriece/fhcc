@@ -9,8 +9,15 @@ interface QuoteProps {
 
 export const QuoteCard: FC<QuoteProps> = ({ quote, page, num }) => {
   return (
-    <Card id={`${page}-page-quote-${num}`} variant="quote">
-      <Typography variant="quote">{quote}</Typography>
+    <Card
+      role="blockquote"
+      aria-label={`Quote number ${num} from page ${page}`}
+      id={`${page}-page-quote-${num}`}
+      variant="quote"
+    >
+      <Typography variant="quote" aria-label={`Quote content: ${quote}`}>
+        {quote}
+      </Typography>
     </Card>
   );
 };

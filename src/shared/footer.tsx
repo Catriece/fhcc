@@ -28,13 +28,127 @@ export const Footer = () => {
             alignItems: "center",
           }}
         >
-          <Typography>Footer Here</Typography>
+          <Typography>Logo and Name</Typography>
         </Box>
         <Box sx={{ marginTop: 3 }}>
-          <Typography>Footer Here</Typography>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              marginTop: isMobile ? 1 : 0,
+              marginBottom: isMobile ? 1 : 2,
+            }}
+          >
+            <Box
+              sx={{
+                marginTop: 2,
+                marginBottom: 1,
+                fontWeight: 800,
+                textAlign: isMobile ? "center" : "left",
+              }}
+            >
+              Contact Us
+            </Box>
+            <Box id="address-label" sx={{ marginBottom: 1 }}>
+              <Typography
+                variant="body2"
+                sx={{
+                  fontWeight: 750,
+                  textAlign: isMobile ? "center" : "left",
+                }}
+              >
+                Address:
+              </Typography>
+            </Box>
+            <Box id="address">
+              <Typography
+                variant="body2"
+                sx={{
+                  textAlign: isMobile ? "center" : "left",
+                }}
+              >
+                2375 Professional Heights Drive Ste. 250
+                <br />
+                Lexington, Kentucky 40503
+              </Typography>
+            </Box>
+            <Box
+              id="p.o-box-address-label"
+              sx={{
+                marginTop: 1.5,
+                marginBottom: 1,
+              }}
+            >
+              <Typography
+                variant="body2"
+                sx={{
+                  fontWeight: 750,
+                  textAlign: isMobile ? "center" : "left",
+                }}
+              >
+                P.O. Box Address:
+              </Typography>
+            </Box>
+            <Box id="p.o-box-address">
+              <Typography
+                variant="body2"
+                sx={{
+                  marginTop: 0.5,
+                  marginBottom: 1,
+                  textAlign: isMobile ? "center" : "left",
+                }}
+              >
+                P.o. Box 23148
+                <br />
+                Lexington, Kentucky 40523
+              </Typography>
+              <Box
+                id="phone-number-label"
+                sx={{ marginTop: isMobile ? 1.5 : 0.5, marginBottom: 1 }}
+              >
+                <Typography
+                  variant="body2"
+                  sx={{
+                    fontWeight: 750,
+                    textAlign: isMobile ? "center" : "left",
+                  }}
+                >
+                  Phone Number:
+                </Typography>
+              </Box>
+              <Box id="phone-number">
+                <Typography
+                  variant="body2"
+                  sx={{
+                    textAlign: isMobile ? "center" : "left",
+                  }}
+                >
+                  (859) 447-4140
+                </Typography>
+              </Box>
+            </Box>
+          </Box>
         </Box>
         <Box sx={{ marginTop: 3 }}>
-          <Typography>Footer Here</Typography>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              marginTop: isMobile ? 1 : 0,
+              marginBottom: isMobile ? 1 : 2,
+            }}
+          >
+            <Box
+              sx={{
+                marginTop: 2,
+                marginBottom: 1,
+                fontWeight: 800,
+                textAlign: isMobile ? "center" : "left",
+              }}
+            >
+              Our Services
+            </Box>
+          </Box>
         </Box>
       </Card>
       <Box
@@ -91,7 +205,7 @@ export const Footer = () => {
             </Typography>
           </Link>
         </Box>
-        <Typography sx={{ textAlign: "center", paddingTop: 1 }}>
+        {/* <Typography sx={{ textAlign: "center", paddingTop: 1 }}>
           Powered by{" "}
           <Link
             to={"http://catriecegilbert.dev"}
@@ -107,7 +221,7 @@ export const Footer = () => {
               Ann Loraine Web Studio
             </Box>
           </Link>
-        </Typography>
+        </Typography> */}
       </Box>
     </>
   );

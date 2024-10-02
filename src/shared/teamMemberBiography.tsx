@@ -10,6 +10,7 @@ interface TeamMember {
   biography: string;
   cta?: ReactNode;
   index: number;
+  page?: string;
 }
 
 export const TeamMemberBio: FC<TeamMember> = ({
@@ -19,10 +20,13 @@ export const TeamMemberBio: FC<TeamMember> = ({
   biography,
   cta,
   index,
+  page,
 }) => {
   const { isMobile } = mobileView();
   return (
     <Box
+      role="region"
+      aria-labelledby="team-member-bio-heading"
       sx={{
         width: "100%",
         display: "flex",
@@ -39,19 +43,28 @@ export const TeamMemberBio: FC<TeamMember> = ({
             ? "row"
             : "row-reverse",
           justifyContent: "space-evenly",
-          alignItems: isMobile ? "center" : "center",
+          alignItems: "center",
           margin: "20px 0",
         }}
       >
         <Card
           variant="image"
+          aria-labelledby={`${alt}-image`}
           sx={{
+            backgroundColor: "red",
             width: isMobile ? "300px" : "35%",
             maxWidth: "350px",
             borderRadius: 2,
+            height: page ? "300px" : "100%",
           }}
         >
-          <CardMedia height="100%" component="img" image={image} alt={alt} />
+          <CardMedia
+            loading="lazy"
+            height="100%"
+            component="img"
+            image={image}
+            alt={alt}
+          />
         </Card>
         <Box
           id="text"
@@ -63,7 +76,17 @@ export const TeamMemberBio: FC<TeamMember> = ({
           }}
         >
           {isMobile && <Box aria-hidden="true" sx={{ marginTop: 3 }} />}
-          {bioHeading}
+          <Typography
+            id="team-member-bio-heading"
+            variant="h3"
+            sx={{
+              textAlign: isMobile ? "center" : "left",
+              marginBottom: 2,
+            }}
+          >
+            {bioHeading}
+          </Typography>
+
           <Box aria-hidden="true" sx={{ marginTop: isMobile ? 2 : 3 }} />
           <Typography
             variant={"body1"}
@@ -76,7 +99,7 @@ export const TeamMemberBio: FC<TeamMember> = ({
           >
             {biography}
           </Typography>
-          {cta !== undefined && (
+          {cta && (
             <Box
               sx={{
                 marginTop: 4,

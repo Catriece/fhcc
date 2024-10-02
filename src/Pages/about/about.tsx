@@ -5,18 +5,29 @@ import teamPic from "../../assets/teamPic.jpg";
 import { largeView, mobileView } from "../../styles/constants";
 import { COMPANY_NAME } from "../../lib";
 import { Approach } from "./approach";
+import { holleyBio } from "../../lib/holleyBio";
+import { TeamMemberBio } from "../../shared/teamMemberBiography";
+import holley from "../../assets/holley.jpeg";
+import harold from "../../assets/harold.jpg";
+import { haroldBio } from "../../lib/haroldBio";
+import { CTACard } from "../../shared/cta";
+import { Footer } from "../../shared/footer";
 
 export const AboutPage = () => {
   const { isMobile } = mobileView();
   const { isLargeScreen } = largeView();
 
   return (
-    <Box sx={{ height: "inherit", width: "inherit" }}>
+    <Box
+      className="top-box"
+      sx={{ height: "inherit", width: "inherit", overflow: "scroll" }}
+    >
       <Hero
         img={teamPic}
         size={"cover"}
         position={"center top"}
         page={"home"}
+        webHeight="60dvh"
         children={
           <Paper
             elevation={3}
@@ -59,8 +70,162 @@ export const AboutPage = () => {
         num={1}
       />
       <Box aria-hidden="true" sx={{ marginTop: 5 }} />
-      <Approach />
+      <Box
+        sx={{
+          width: "100%",
+          display: "flex",
+
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
+        }}
+      >
+        <Typography variant="h2" gutterBottom>
+          Meet the Team
+        </Typography>
+        <Box
+          sx={{
+            width: "800px",
+            display: "flex",
+            justifyContent: "space-evenly",
+            alignItems: "center",
+            flexDirection: isMobile ? "column" : "row",
+          }}
+        >
+          <Box>
+            <Box
+              sx={{
+                backgroundImage: `url(${holley})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center left 25%",
+                backgroundRepeat: "no-repeat",
+                height: isMobile ? "300px" : "450px",
+                width: isMobile ? "250px" : "350px",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: isMobile ? "center" : "flex-start",
+                justifyContent: "center",
+                borderRadius: 2,
+              }}
+            />
+            <Typography
+              sx={{
+                fontSize: "2rem",
+                marginTop: 2,
+                marginBottom: 1,
+                fontWeight: 750,
+              }}
+            >
+              Holley ____
+            </Typography>
+            <Typography
+              sx={{ color: "gray", fontSize: "1.25rem", fontStyle: "italic" }}
+            >
+              Naturopathy Practictioner
+            </Typography>
+          </Box>
+          <Box>
+            <Box
+              sx={{
+                backgroundImage: `url(${harold})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center left 25%",
+                backgroundRepeat: "no-repeat",
+                height: isMobile ? "300px" : "450px",
+                width: isMobile ? "250px" : "350px",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: isMobile ? "center" : "flex-start",
+                justifyContent: "center",
+                borderRadius: 2,
+              }}
+            />
+            <Typography
+              sx={{
+                fontSize: "2rem",
+                marginTop: 2,
+                marginBottom: 1,
+                fontWeight: 750,
+              }}
+            >
+              Harold Gilbert
+            </Typography>
+            <Typography
+              sx={{ color: "gray", fontSize: "1.25rem", fontStyle: "italic" }}
+            >
+              Biorequency Technician
+            </Typography>
+          </Box>
+        </Box>
+      </Box>
       <Box aria-hidden="true" sx={{ marginTop: 5 }} />
+      <Approach />
+      <Box aria-hidden="true" sx={{ marginTop: 4 }} />
+
+      <TeamMemberBio
+        image={holley}
+        alt={"Naturopathy-Expert-Holley"}
+        bioHeading={
+          <>
+            <Typography
+              variant={"h4"}
+              sx={{ textAlign: isMobile ? "center" : "left" }}
+            >
+              Holley
+            </Typography>
+            <Box aria-hidden="true" sx={{ marginTop: isMobile ? 0 : 1 }} />
+            <Typography
+              variant={"body1"}
+              sx={{
+                textAlign: isMobile ? "center" : "left",
+                fontSize: "1.25rem",
+                color: "gray",
+              }}
+            >
+              Naturopathy Practitioner
+            </Typography>
+          </>
+        }
+        biography={holleyBio}
+        index={0}
+      />
+      <Box aria-hidden="true" sx={{ marginTop: 4 }} />
+      <CTACard
+        cta={"Experience Holistic Healing Today"}
+        label={"Get Started Today"}
+        page={"about"}
+        num={1}
+      />
+      <Box aria-hidden="true" sx={{ marginTop: 3 }} />
+      <TeamMemberBio
+        image={harold}
+        alt={"Biofrequency-Technician"}
+        bioHeading={
+          <>
+            <Typography
+              variant={"h4"}
+              sx={{ textAlign: isMobile ? "center" : "left" }}
+            >
+              Harold Gilbert
+            </Typography>
+            <Box aria-hidden="true" sx={{ marginTop: isMobile ? 0 : 1 }} />
+            <Typography
+              variant={"body1"}
+              sx={{
+                textAlign: isMobile ? "center" : "left",
+                fontSize: "1.25rem",
+                color: "gray",
+              }}
+            >
+              Bio-Frequency Technician
+            </Typography>
+          </>
+        }
+        biography={haroldBio}
+        index={1}
+      />
+      <Box aria-hidden="true" sx={{ marginTop: 4 }} />
+      <Footer />
     </Box>
   );
 };

@@ -1,6 +1,5 @@
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import { FC, ReactNode } from "react";
-import { CustomButton } from "./button";
 import { mobileView } from "../styles/constants";
 
 interface HeroProps {
@@ -9,6 +8,7 @@ interface HeroProps {
   position: string;
   page: string;
   children: ReactNode;
+  webHeight: string;
 }
 
 export const Hero: FC<HeroProps> = ({
@@ -17,18 +17,21 @@ export const Hero: FC<HeroProps> = ({
   position,
   page,
   children,
+  webHeight,
 }) => {
   const { isMobile } = mobileView();
   return (
     <Box
       id={`hero-img-${page}`}
+      role="banner"
+      aria-label={`Hero section for ${page} page`}
       sx={{
         backgroundImage: `url(${img})`,
         backgroundSize: size,
         backgroundPosition: position,
         backgroundRepeat: "no-repeat",
         minHeight: isMobile ? "457px" : "609px",
-        height: isMobile ? "105dvh" : "80dvh",
+        height: isMobile ? "105dvh" : webHeight,
         width: "100%",
         display: "flex",
         flexDirection: "column",

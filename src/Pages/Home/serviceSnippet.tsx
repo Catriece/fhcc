@@ -9,7 +9,6 @@ import {
 } from "@mui/material";
 import WaterDropIcon from "@mui/icons-material/WaterDrop";
 import { CustomButton } from "../../shared/button";
-import { MouseEvent } from "react";
 
 export const ServicesSnippet = () => {
   const services = [
@@ -46,6 +45,8 @@ export const ServicesSnippet = () => {
   ];
   return (
     <Box
+      role="region"
+      aria-labelledby="services-heading"
       sx={{
         width: "100%",
         display: "flex",
@@ -53,7 +54,7 @@ export const ServicesSnippet = () => {
         justifyContent: "center",
       }}
     >
-      <Typography variant="h3">
+      <Typography id="services-heading" variant="h3">
         Struggling with wellness? Find personalized solutions here.
       </Typography>
       <Typography variant="subheading">
@@ -69,7 +70,12 @@ export const ServicesSnippet = () => {
         }}
       >
         {services.map((service) => (
-          <Card key={service.id} elevation={5} variant="serviceSmall">
+          <Card
+            key={service.id}
+            elevation={5}
+            variant="serviceSmall"
+            role="article"
+          >
             <CardContent
               sx={{
                 display: "flex",
@@ -79,12 +85,15 @@ export const ServicesSnippet = () => {
             >
               <Icon sx={{ width: "100%", height: "40px" }}>{service.icon}</Icon>
               <Typography
+                id={`${service.id}-service-heading`}
+                component="h4"
                 sx={{ fontSize: "18pt", marginTop: 2, textAlign: "center" }}
               >
                 {service.name}
               </Typography>
               <Divider sx={{ margin: "10px 0" }} />
               <Typography
+                component="p"
                 sx={{ fontSize: "13pt", marginTop: 2, textAlign: "center" }}
               >
                 {service.description}
@@ -92,6 +101,7 @@ export const ServicesSnippet = () => {
             </CardContent>
             <CardActions>
               <CustomButton
+                ariaLabel={`Learn more about ${service.name}`}
                 id={`${service.id}-button`}
                 label={"Learn More"}
                 func={() => console.log(`Go to ${service.name}`)}

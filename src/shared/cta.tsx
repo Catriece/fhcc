@@ -1,6 +1,7 @@
 import { Card, Typography } from "@mui/material";
-import { FC, MouseEvent } from "react";
+import { FC } from "react";
 import { CustomButton } from "./button";
+import { useNavigate } from "react-router-dom";
 
 interface CTAProps {
   cta: string;
@@ -10,6 +11,12 @@ interface CTAProps {
 }
 
 export const CTACard: FC<CTAProps> = ({ cta, label, page, num }) => {
+  const navigate = useNavigate();
+
+  const handleNavigation = (path: string) => {
+    navigate(path);
+  };
+
   return (
     <Card
       sx={{ display: "flex", flexDirection: "column" }}
@@ -21,9 +28,10 @@ export const CTACard: FC<CTAProps> = ({ cta, label, page, num }) => {
       </Typography>
 
       <CustomButton
+        ariaLabel="Contact us button"
         id={`${page}-page-cta-button-${num}`}
         label={label}
-        func={() => console.log("Go to contact us")}
+        func={() => handleNavigation("/contact")}
         variant={"cta"}
       />
     </Card>

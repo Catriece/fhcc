@@ -1,9 +1,11 @@
 import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
+import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { HomePage } from "./pages/home/home.tsx";
 import { AboutPage } from "./pages/about/about.tsx";
+import { ContactForm } from "./pages/contact/contact.tsx";
 
 const router = createBrowserRouter([
   {
@@ -11,11 +13,14 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       { index: true, element: <HomePage /> },
-      { path: "/about", element: <AboutPage /> },
+      { path: "about", element: <AboutPage /> },
+      { path: "contact", element: <ContactForm /> },
     ],
   },
 ]);
 
 createRoot(document.getElementById("root")!).render(
-  <RouterProvider router={router} />
+  <React.StrictMode>
+    <RouterProvider router={router} />
+  </React.StrictMode>
 );

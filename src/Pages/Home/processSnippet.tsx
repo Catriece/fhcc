@@ -1,13 +1,4 @@
-import {
-  Box,
-  Card,
-  CardActions,
-  CardContent,
-  Divider,
-  Icon,
-  Typography,
-} from "@mui/material";
-import { CustomButton } from "../../shared/button";
+import { Box, Card, CardContent, Divider, Typography } from "@mui/material";
 
 export const OurProcessSnippet = () => {
   const process = [
@@ -32,17 +23,42 @@ export const OurProcessSnippet = () => {
   ];
   return (
     <Box
-      sx={{
-        width: "100%",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-      }}
+      role="region"
+      aria-labelledby="wellness-journey-heading"
+      sx={[
+        {
+          width: "100%",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          color: "white",
+        },
+        (theme) => ({
+          backgroundColor: theme.palette.primary.main,
+        }),
+      ]}
     >
-      <Typography variant="h3" component="h1" gutterBottom>
+      <Typography
+        id="wellness-journey-heading"
+        variant="h3"
+        component="h1"
+        gutterBottom
+        sx={{
+          marginTop: 7,
+          width: "95%",
+        }}
+      >
         How We Nurture Your Wellness Journey
       </Typography>
-      <Typography variant="subheading" gutterBottom>
+      <Typography
+        variant="subheading"
+        gutterBottom
+        component="p"
+        sx={{
+          width: "95%",
+        }}
+      >
         Our step-by-step approach ensures personalized and effective care,
         guiding you towards optimal wellness and balance.
       </Typography>
@@ -53,10 +69,16 @@ export const OurProcessSnippet = () => {
           display: "flex",
           justifyContent: "center",
           flexWrap: "wrap",
+          marginBottom: 8,
         }}
       >
         {process.map((step) => (
-          <Card key={step.id} elevation={0} variant="processSmall">
+          <Card
+            key={step.id}
+            elevation={0}
+            variant="processSmall"
+            role="article"
+          >
             <CardContent
               sx={{
                 display: "flex",
@@ -65,17 +87,21 @@ export const OurProcessSnippet = () => {
               }}
             >
               <Typography
+                id={`process-step-number-${step.id}`}
+                component="h2"
                 sx={{ width: "100%", textAlign: "center", fontSize: "30pt" }}
               >
                 {step.step}
               </Typography>
               <Typography
+                component="h4"
                 sx={{ fontSize: "18pt", marginTop: 2, textAlign: "center" }}
               >
                 {step.name}
               </Typography>
               <Divider sx={{ margin: "10px 0" }} />
               <Typography
+                component="p"
                 sx={{ fontSize: "13pt", marginTop: 2, textAlign: "center" }}
               >
                 {step.description}

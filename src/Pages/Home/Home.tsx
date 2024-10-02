@@ -18,12 +18,17 @@ export const HomePage = () => {
   const { isMobile } = mobileView();
   const navigate = useNavigate();
   return (
-    <Box sx={{ height: "inherit", width: "inherit" }}>
+    <Box
+      className="top-box"
+      role="main"
+      sx={{ height: "inherit", width: "inherit", overflow: "scroll" }}
+    >
       <Hero
         img={heroPhoto}
         size={"cover"}
         position={"center left 25%"}
         page={"home"}
+        webHeight="60dvh"
         children={
           <Box
             id={"hero-text-home"}
@@ -53,7 +58,11 @@ export const HomePage = () => {
                 margin: isMobile ? "auto" : "0",
               }}
             >
-              <Typography variant={"heroSubtitle"} gutterBottom>
+              <Typography
+                variant={"heroSubtitle"}
+                aria-label="Description of the practice"
+                gutterBottom
+              >
                 We create personalized nutrition plans for individuals seeking
                 lasting health and freedom from wellness struggles.
               </Typography>
@@ -73,6 +82,7 @@ export const HomePage = () => {
                 variant={"cta"}
                 label={"Contact Us Today!"}
                 func={() => console.log("To contact")}
+                ariaLabel={"Contact button"}
               />
             </Box>
           </Box>
@@ -85,14 +95,14 @@ export const HomePage = () => {
         page={"home"}
         num={1}
       />
-      <Box aria-hidden="true" sx={{ marginTop: 8 }} />
+      <Box aria-hidden="true" sx={{ marginTop: 10 }} />
       <ServicesSnippet />
-      <Box aria-hidden="true" sx={{ marginTop: 5 }} />
+      <Box aria-hidden="true" sx={{ marginTop: 7 }} />
       <OurProcessSnippet />
-      <Box aria-hidden="true" sx={{ marginTop: 3 }} />
+      <Box aria-hidden="true" sx={{ marginTop: 7 }} />
       <TeamMemberBio
         image={holley}
-        alt={"Naturopathy-Expert-Holley"}
+        alt={"Naturopathy-Practitioner-Holley"}
         bioHeading={
           <>
             <Typography
@@ -117,6 +127,7 @@ export const HomePage = () => {
           <CustomButton
             id={"holley-home-page-snippet"}
             label={"Learn More About Us"}
+            ariaLabel={"Learn More Button"}
             func={() => navigate("/about")}
             endIcon={<ChevronRightIcon />}
             variant={"secondary"}

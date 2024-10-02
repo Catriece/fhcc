@@ -37,21 +37,35 @@ export const Approach = () => {
   const { isMobile } = mobileView();
   return (
     <Box
-      sx={{
-        width: "100%",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-      }}
+      sx={[
+        {
+          width: "100%",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+        },
+        (theme) => ({
+          backgroundColor: theme.palette.primary.main,
+        }),
+      ]}
     >
-      <Typography variant="h3">Our Approach</Typography>
+      <Typography variant="h3" sx={{ marginTop: 5, color: "white" }}>
+        Our Approach
+      </Typography>
+      <Typography
+        variant="h5"
+        sx={{ marginTop: 2, color: "white", textAlign: "center" }}
+      >
+        Subheading will go here.
+      </Typography>
       <Box
         sx={{
           width: "100%",
           display: "flex",
           justifyContent: "center",
           flexWrap: "wrap",
-          marginTop: 3,
+          marginTop: 1,
+          marginBottom: 6,
         }}
       >
         {approach.map((step) => (

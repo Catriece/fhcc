@@ -35,6 +35,7 @@ declare module "@mui/material/Typography" {
     quote: true;
     serviceSmall: true;
     subheading: true;
+    navigation: true;
   }
 }
 
@@ -65,13 +66,12 @@ theme = createTheme(theme, {
       styleOverrides: {
         root: [
           {
-            zIndex: 2,
+            zIndex: 1,
             height: "125px",
             width: "100%",
             color: "#FFFFFF",
             display: "flex",
             justifyContent: "center",
-            boxShadow: `0 0 10px 10px ${theme.palette.primary.main}`,
           },
         ],
       },
@@ -136,6 +136,7 @@ theme = createTheme(theme, {
         },
       ],
     },
+
     MuiPaper: {
       variants: [
         {
@@ -195,7 +196,6 @@ theme = createTheme(theme, {
             alignItems: "center",
             borderRadius: 0,
             backgroundColor: theme.palette.primary.main,
-            boxShadow: `0 0 10px 10px ${theme.palette.primary.main}`,
             textAlign: "center",
           },
         },
@@ -209,7 +209,7 @@ theme = createTheme(theme, {
             alignItems: "center",
             borderRadius: 0,
             backgroundColor: theme.palette.primary.main,
-            boxShadow: `0 0 10px 10px ${theme.palette.primary.main}`,
+
             textAlign: "center",
           },
         },
@@ -217,7 +217,7 @@ theme = createTheme(theme, {
           props: { variant: "serviceSmall" },
           style: ({ ownerState }: { ownerState: PaperOwnerState }) => ({
             height: "300px",
-            width: "225px",
+            width: "85%",
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
@@ -225,6 +225,7 @@ theme = createTheme(theme, {
             margin: "20px 10px",
             boxshadow: theme.shadows[ownerState.elevation ?? 0],
             [theme.breakpoints.up("md")]: {
+              width: "250px",
               transition: "transform 0.3s ease",
               "&:hover": {
                 transform: "scale(1.025)",
@@ -236,7 +237,7 @@ theme = createTheme(theme, {
           props: { variant: "processSmall" },
           style: ({ ownerState }: { ownerState: PaperOwnerState }) => ({
             height: "250px",
-            width: "90%",
+            width: "85%",
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
@@ -306,7 +307,6 @@ theme = createTheme(theme, {
       textAlign: "center",
       [theme.breakpoints.down("md")]: {
         fontSize: "24pt",
-        paddingRight: "0 20pt",
       },
     },
     string: {
@@ -339,6 +339,9 @@ theme = createTheme(theme, {
       lineHeight: 1.5,
       letterSpacing: ".025rem",
       textAlign: "center",
+    },
+    navigation: {
+      color: "#ffffff",
     },
   },
 });
