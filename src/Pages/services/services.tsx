@@ -3,7 +3,7 @@ import { Hero } from "../../shared/hero";
 import heroPhoto from "../../assets/hero-photo.jpg";
 import { mobileView } from "../../styles/constants";
 import { QuoteCard } from "../../shared/quote";
-import { Approach } from "../about/approach";
+import { Approach } from "../About/approach";
 import { holleyBio } from "../../lib/holleyBio";
 import { TeamMemberBio } from "../../shared/teamMemberBiography";
 import holley from "../../assets/holley.jpeg";
