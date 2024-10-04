@@ -12,7 +12,6 @@ import harold from "../../assets/harold.jpg";
 import { haroldBio } from "../../lib/haroldBio";
 import { CTACard } from "../../shared/cta";
 import { Footer } from "../../shared/footer";
-import { HomePage } from "../home/home";
 
 export const AboutPage = () => {
   const { isMobile } = mobileView();

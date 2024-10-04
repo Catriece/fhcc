@@ -1,8 +1,6 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid2";
-import Paper from "@mui/material/Paper";
-import Icon from "@mui/material/Icon";
 import { ServiceCard } from "./serviceCard";
 import { mobileView } from "../../styles/constants";
 

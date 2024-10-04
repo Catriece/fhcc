@@ -3,12 +3,6 @@ import { Hero } from "../../shared/hero";
 import heroPhoto from "../../assets/hero-photo.jpg";
 import { mobileView } from "../../styles/constants";
 import { QuoteCard } from "../../shared/quote";
-import { ServicesSection } from "./serviceSection";
-import { ServicesSnippet } from "../home/serviceSnippet";
-
-import { Paper } from "@mui/material";
-import { largeView } from "../../styles/constants";
-import { COMPANY_NAME } from "../../lib";
 import { Approach } from "../about/approach";
 import { holleyBio } from "../../lib/holleyBio";
 import { TeamMemberBio } from "../../shared/teamMemberBiography";
@@ -17,11 +11,9 @@ import harold from "../../assets/harold.jpg";
 import { haroldBio } from "../../lib/haroldBio";
 import { CTACard } from "../../shared/cta";
 import { Footer } from "../../shared/footer";
-import { HomePage } from "../home/home";
 
 export const ServicesPage = () => {
   const { isMobile } = mobileView();
-  const { isLargeScreen } = largeView();
 
   return (
     <Box
