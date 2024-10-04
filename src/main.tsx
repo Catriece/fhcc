@@ -3,10 +3,11 @@ import App from "./App.tsx";
 import "./index.css";
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import HomePage from "./pages/home/home.tsx";
+import HomePage from "../src/pages/home/home.tsx";
 import AboutPage from "./pages/about/about.tsx";
 import ContactForm from "./pages/contact/contact.tsx";
 import ServicesPage from "./pages/services/services.tsx";
+
 const router = createBrowserRouter([
   {
     path: "/",
