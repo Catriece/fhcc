@@ -21,14 +21,14 @@ export const HomePage = () => {
     <Box
       className="top-box"
       role="main"
-      sx={{ height: "inherit", width: "inherit", overflow: "scroll" }}
+      sx={{ width: "inherit", overflow: "auto" }}
     >
       <Hero
         img={heroPhoto}
         size={"cover"}
         position={"center left 25%"}
         page={"home"}
-        webHeight="60dvh"
+        webHeight={isMobile ? "75dvh" : "60dvh"}
         children={
           <Box
             id={"hero-text-home"}
@@ -36,7 +36,7 @@ export const HomePage = () => {
               marginLeft: isMobile ? 0 : 8,
             }}
           >
-            <Box sx={{ marginTop: isMobile ? "4rem" : "6rem" }} />
+            <Box sx={{ marginTop: isMobile ? "4rem" : "1.5rem" }} />
             <Typography variant={"h2"} component={"h1"} gutterBottom>
               Fuel your{" "}
               <Box component="span" sx={{ color: "gold", fontStyle: "italic" }}>
@@ -101,6 +101,7 @@ export const HomePage = () => {
       <OurProcessSnippet />
       <Box aria-hidden="true" sx={{ marginTop: 7 }} />
       <TeamMemberBio
+        page="home"
         image={holley}
         alt={"Naturopathy-Practitioner-Holley"}
         bioHeading={
@@ -121,16 +122,16 @@ export const HomePage = () => {
             </Typography>
           </>
         }
-        biography={holleyBio.slice(0, 510)}
+        biography={holleyBio}
         index={0}
         cta={
           <CustomButton
             id={"holley-home-page-snippet"}
-            label={"Learn More About Us"}
+            label={"Learn More"}
             ariaLabel={"Learn More Button"}
             func={() => navigate("/about")}
             endIcon={<ChevronRightIcon />}
-            variant={"secondary"}
+            variant={"primary"}
           />
         }
       />

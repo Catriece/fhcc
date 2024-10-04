@@ -33,6 +33,7 @@ function App() {
     top?.scrollTo({ top: 0, left: 0 });
     console.log("Top: ", top);
     navigate(path);
+    setAnchorEl(null);
   };
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -48,9 +49,8 @@ function App() {
       <Box
         sx={{
           width: "100%",
-          flexGrow: 1,
-          zIndex: 1,
-          position: "fixed",
+          zIndex: 0,
+          position: "static",
           top: 0,
         }}
       >
@@ -84,7 +84,7 @@ function App() {
                     <HomeRoundedIcon />
                     Home
                   </MenuItem>
-                  <MenuItem onClick={handleClose}>
+                  <MenuItem onClick={handleNavigate("/services")}>
                     <MedicalServicesRoundedIcon />
                     Services
                   </MenuItem>
@@ -112,7 +112,7 @@ function App() {
                   id={"nav-services"}
                   variant={"navigation"}
                   label={"Services"}
-                  func={() => console.log("To services")}
+                  func={handleNavigate("/services")}
                 />
                 <CustomButton
                   ariaLabel="nav-about-button"

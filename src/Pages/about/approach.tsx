@@ -71,7 +71,7 @@ export const Approach = () => {
         {approach.map((step) => (
           <Card
             key={step.id}
-            elevation={5}
+            elevation={10}
             variant="serviceSmall"
             sx={{
               borderRadius: 4,

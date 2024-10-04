@@ -1,10 +1,15 @@
-import { Box, Paper, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { Hero } from "../../shared/hero";
+import heroPhoto from "../../assets/hero-photo.jpg";
+import { mobileView } from "../../styles/constants";
 import { QuoteCard } from "../../shared/quote";
-import teamPic from "../../assets/teamPic.jpg";
-import { largeView, mobileView } from "../../styles/constants";
+import { ServicesSection } from "./serviceSection";
+import { ServicesSnippet } from "../home/serviceSnippet";
+
+import { Paper } from "@mui/material";
+import { largeView } from "../../styles/constants";
 import { COMPANY_NAME } from "../../lib";
-import { Approach } from "./approach";
+import { Approach } from "../about/approach";
 import { holleyBio } from "../../lib/holleyBio";
 import { TeamMemberBio } from "../../shared/teamMemberBiography";
 import holley from "../../assets/holley.jpeg";
@@ -14,7 +19,7 @@ import { CTACard } from "../../shared/cta";
 import { Footer } from "../../shared/footer";
 import { HomePage } from "../home/home";
 
-export const AboutPage = () => {
+export const ServicesPage = () => {
   const { isMobile } = mobileView();
   const { isLargeScreen } = largeView();
 
@@ -24,43 +29,24 @@ export const AboutPage = () => {
       sx={{ height: "inherit", width: "inherit", overflow: "scroll" }}
     >
       <Hero
-        img={teamPic}
+        img={heroPhoto}
         size={"cover"}
         position={"center top 20%"}
-        page={"home"}
-        webHeight="30dvh"
+        page={"services"}
+        webHeight={isMobile ? "400px" : "40dvh"}
         children={
-          <Paper
-            elevation={3}
-            sx={{
-              mt: 30,
-              padding: isMobile ? "10px 0" : 0,
-              width: isMobile ? "80%" : "425px",
-              marginLeft: isMobile ? 0 : isLargeScreen ? 10 : 5,
-              minHeight: "200px",
-              maxWidth: "700px",
-              opacity: 0.7,
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-evenly",
-              alignItems: "center",
-            }}
-          >
-            <Typography sx={{ paddingRight: 3, paddingLeft: 3 }} variant="h5">
-              {COMPANY_NAME}
-            </Typography>
-            <Typography
-              sx={{ paddingRight: 3, paddingLeft: 3 }}
-              variant="body2"
-              gutterBottom
+          <Box>
+            <Box
+              sx={{
+                display: "flex",
+                textShadow: isMobile ? "0 0 10px #000" : "",
+              }}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-              faucibus sapien nec sapien interdum. Aenean varius, nisl ac
-              vehicula dapibus, erat lorem fermentum velit. Curabitur efficitur,
-              nisl vitae sollicitudin aliquam, erat libero tempus nulla. Nam
-              malesuada lacus non ligula posuere, at gravida sem suscipit.
-            </Typography>
-          </Paper>
+              <Typography variant="h2" color={isMobile ? "white" : "black"}>
+                Our Services
+              </Typography>
+            </Box>
+          </Box>
         }
       />
       <QuoteCard
@@ -152,7 +138,7 @@ export const AboutPage = () => {
             <Typography
               sx={{ color: "gray", fontSize: "1.25rem", fontStyle: "italic" }}
             >
-              Bio-Frequency Technician
+              Biorequency Technician
             </Typography>
           </Box>
         </Box>
