@@ -13,8 +13,9 @@ import holley from "../../assets/holley.jpeg";
 import { holleyBio } from "../../lib/holleyBio";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { useNavigate } from "react-router-dom";
+import { FC } from "react";
 
-const HomePage = () => {
+const HomePage: FC = () => {
   const { isMobile } = mobileView();
   const navigate = useNavigate();
   return (

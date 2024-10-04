@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material";
+import { FC } from "react";
 
-const ContactForm = () => {
+const ContactForm: FC = () => {
   return (
     <Box
       className="top-box"
