@@ -13,7 +13,7 @@ import { haroldBio } from "../../lib/haroldBio";
 import { CTACard } from "../../shared/cta";
 import { Footer } from "../../shared/footer";
 
-export const AboutPage = () => {
+const AboutPage = () => {
   const { isMobile } = mobileView();
   const { isLargeScreen } = largeView();
 
@@ -227,3 +227,5 @@ export const AboutPage = () => {
     </Box>
   );
 };
+
+export default AboutPage;

@@ -14,7 +14,7 @@ import { holleyBio } from "../../lib/holleyBio";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { useNavigate } from "react-router-dom";
 
-export const HomePage = () => {
+const HomePage = () => {
   const { isMobile } = mobileView();
   const navigate = useNavigate();
   return (
@@ -146,3 +146,5 @@ export const HomePage = () => {
     </Box>
   );
 };
+
+export default HomePage;

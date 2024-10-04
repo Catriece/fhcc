@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 
-export const ContactForm = () => {
+const ContactForm = () => {
   return (
     <Box
       className="top-box"
@@ -14,3 +14,5 @@ export const ContactForm = () => {
     </Box>
   );
 };
+
+export default ContactForm;

@@ -12,7 +12,7 @@ import { haroldBio } from "../../lib/haroldBio";
 import { CTACard } from "../../shared/cta";
 import { Footer } from "../../shared/footer";
 
-export const ServicesPage = () => {
+const ServicesPage = () => {
   const { isMobile } = mobileView();
 
   return (
@@ -206,3 +206,5 @@ export const ServicesPage = () => {
     </Box>
   );
 };
+
+export default ServicesPage;
