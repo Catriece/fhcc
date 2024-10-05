@@ -1,9 +1,10 @@
+import { FC } from "react";
 import { Box, Typography } from "@mui/material";
 import { Hero } from "../../shared/hero";
 import heroPhoto from "../../assets/hero-photo.jpg";
 import { mobileView } from "../../styles/constants";
 import { QuoteCard } from "../../shared/quote";
-import { Approach } from "../About/approach";
+import { Approach } from "../about/approach";
 import { holleyBio } from "../../lib/holleyBio";
 import { TeamMemberBio } from "../../shared/teamMemberBiography";
 import holley from "../../assets/holley.jpeg";
@@ -11,7 +12,6 @@ import harold from "../../assets/harold.jpg";
 import { haroldBio } from "../../lib/haroldBio";
 import { CTACard } from "../../shared/cta";
 import { Footer } from "../../shared/footer";
-import { FC } from "react";
 
 const ServicesPage: FC = () => {
   const { isMobile } = mobileView();

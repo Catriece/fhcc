@@ -1,3 +1,4 @@
+import { FC } from "react";
 import { Box, Paper, Typography } from "@mui/material";
 import { Hero } from "../../shared/hero";
 import { QuoteCard } from "../../shared/quote";
@@ -12,7 +13,6 @@ import harold from "../../assets/harold.jpg";
 import { haroldBio } from "../../lib/haroldBio";
 import { CTACard } from "../../shared/cta";
 import { Footer } from "../../shared/footer";
-import { FC } from "react";
 
 const AboutPage: FC = () => {
   const { isMobile } = mobileView();

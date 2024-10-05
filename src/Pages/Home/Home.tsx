@@ -1,3 +1,4 @@
+import { FC } from "react";
 import { Box, Typography } from "@mui/material";
 import heroPhoto from "../../assets/hero-photo.jpg";
 import { Hero } from "../../shared/hero";
@@ -13,7 +14,6 @@ import holley from "../../assets/holley.jpeg";
 import { holleyBio } from "../../lib/holleyBio";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { useNavigate } from "react-router-dom";
-import { FC } from "react";
 
 const HomePage: FC = () => {
   const { isMobile } = mobileView();

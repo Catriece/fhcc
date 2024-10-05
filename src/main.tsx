@@ -1,12 +1,11 @@
 import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
-import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import HomePage from "./Pages/Home/home.tsx";
-import AboutPage from "./Pages/About/about.tsx";
-import ContactForm from "./Pages/Contact/contact.tsx";
-import ServicesPage from "./Pages/Services/services.tsx";
+import HomePage from "./pages/home/home.tsx";
+import AboutPage from "./pages/about/about.tsx";
+import ContactForm from "./pages/contact/contact.tsx";
+import ServicesPage from "./pages/services/services.tsx";
 
 const router = createBrowserRouter([
   {
