@@ -1,4 +1,3 @@
-import { FC } from "react";
 import { Box, Paper, Typography } from "@mui/material";
 import { Hero } from "../../shared/hero";
 import { QuoteCard } from "../../shared/quote";
@@ -14,7 +13,7 @@ import { haroldBio } from "../../lib/haroldBio";
 import { CTACard } from "../../shared/cta";
 import { Footer } from "../../shared/footer";
 
-const AboutPage: FC = () => {
+export const AboutPage = () => {
   const { isMobile } = mobileView();
   const { isLargeScreen } = largeView();
 
@@ -228,5 +227,3 @@ const AboutPage: FC = () => {
     </Box>
   );
 };
-
-export default AboutPage;

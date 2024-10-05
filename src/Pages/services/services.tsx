@@ -1,4 +1,3 @@
-import { FC } from "react";
 import { Box, Typography } from "@mui/material";
 import { Hero } from "../../shared/hero";
 import heroPhoto from "../../assets/hero-photo.jpg";
@@ -13,7 +12,7 @@ import { haroldBio } from "../../lib/haroldBio";
 import { CTACard } from "../../shared/cta";
 import { Footer } from "../../shared/footer";
 
-const ServicesPage: FC = () => {
+export const ServicesPage = () => {
   const { isMobile } = mobileView();
 
   return (
@@ -207,5 +206,3 @@ const ServicesPage: FC = () => {
     </Box>
   );
 };
-
-export default ServicesPage;

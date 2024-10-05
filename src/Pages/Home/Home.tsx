@@ -1,4 +1,3 @@
-import { FC } from "react";
 import { Box, Typography } from "@mui/material";
 import heroPhoto from "../../assets/hero-photo.jpg";
 import { Hero } from "../../shared/hero";
@@ -15,7 +14,7 @@ import { holleyBio } from "../../lib/holleyBio";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { useNavigate } from "react-router-dom";
 
-const HomePage: FC = () => {
+export const HomePage = () => {
   const { isMobile } = mobileView();
   const navigate = useNavigate();
   return (
@@ -147,5 +146,3 @@ const HomePage: FC = () => {
     </Box>
   );
 };
-
-export default HomePage;
