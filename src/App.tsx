@@ -45,7 +45,6 @@ function App() {
   };
   return (
     <ThemeProvider theme={theme}>
-      {/* <ScrollToTop /> */}
       <Box
         sx={{
           width: "100%",
