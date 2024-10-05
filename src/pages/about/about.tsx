@@ -8,7 +8,7 @@ import { Approach } from "./approach";
 import { holleyBio } from "../../lib/holleyBio";
 import { TeamMemberBio } from "../../shared/teamMemberBiography";
 import holley from "../../assets/holley.jpeg";
-import harold from "../../assets/harold.jpg";
+// import harold from "../../assets/harold.jpg";
 import { haroldBio } from "../../lib/haroldBio";
 import { CTACard } from "../../shared/cta";
 import { Footer } from "../../shared/footer";
@@ -126,7 +126,7 @@ export const AboutPage = () => {
           <Box>
             <Box
               sx={{
-                backgroundImage: `url(${harold})`,
+                backgroundImage: `url(${holley})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center left 25%",
                 backgroundRepeat: "no-repeat",
@@ -196,7 +196,7 @@ export const AboutPage = () => {
       />
       <Box aria-hidden="true" sx={{ marginTop: 3 }} />
       <TeamMemberBio
-        image={harold}
+        image={holley}
         alt={"Biofrequency-Technician"}
         bioHeading={
           <>
