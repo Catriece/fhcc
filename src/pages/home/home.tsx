@@ -21,7 +21,7 @@ export const HomePage = () => {
     <Box
       className="top-box"
       role="main"
-      sx={{ width: "inherit", overflow: "auto" }}
+      sx={{ width: "inherit", height: "inherit", overflow: "auto" }}
     >
       <Hero
         img={heroPhoto}
@@ -95,11 +95,11 @@ export const HomePage = () => {
         page={"home"}
         num={1}
       />
-      <Box aria-hidden="true" sx={{ marginTop: 10 }} />
+      <Box aria-hidden="true" sx={{ marginTop: 5 }} />
       <ServicesSnippet />
       <Box aria-hidden="true" sx={{ marginTop: 7 }} />
       <OurProcessSnippet />
-      <Box aria-hidden="true" sx={{ marginTop: 7 }} />
+      <Box aria-hidden="true" sx={{ marginTop: 4 }} />
       <TeamMemberBio
         page="home"
         image={holley}
@@ -107,16 +107,21 @@ export const HomePage = () => {
         bioHeading={
           <>
             <Typography
-              variant={"h4"}
-              sx={{ textAlign: isMobile ? "center" : "left" }}
+              sx={{
+                textAlign: isMobile ? "center" : "left",
+                fontSize: isMobile ? "22px" : "30px",
+                fontWeight: 650,
+              }}
             >
               Nurtured by nature: <br />
               Get to know your healing expert
             </Typography>
             <Box aria-hidden="true" sx={{ marginTop: isMobile ? 2 : 1 }} />
             <Typography
-              variant={"h3"}
-              sx={{ textAlign: isMobile ? "center" : "left" }}
+              sx={{
+                textAlign: "left",
+                fontSize: isMobile ? "24px" : "36px",
+              }}
             >
               I'm Holley, your Naturopathy Practitioner
             </Typography>

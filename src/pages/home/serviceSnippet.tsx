@@ -52,15 +52,26 @@ export const ServicesSnippet = () => {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
+        alignItems: "center",
       }}
     >
-      <Typography id="services-heading" variant="h3">
-        Struggling with wellness? Find personalized solutions here.
-      </Typography>
-      <Typography variant="subheading">
-        Achieve lasting balance and energy with our personalized wellness
-        solutions designed just for you.
-      </Typography>
+      <Box
+        sx={{
+          width: "90%",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Typography id="services-heading" variant="h3" gutterBottom>
+          Struggling with wellness? Find personalized solutions here.
+        </Typography>
+        <Typography variant="subheading">
+          Achieve lasting balance and energy with our personalized wellness
+          solutions designed just for you.
+        </Typography>
+      </Box>
       <Box
         sx={{
           width: "100%",
@@ -93,7 +104,6 @@ export const ServicesSnippet = () => {
               </Typography>
               <Divider sx={{ margin: "10px 0" }} />
               <Typography
-                component="p"
                 sx={{ fontSize: "13pt", marginTop: 2, textAlign: "center" }}
               >
                 {service.description}

@@ -1,26 +1,29 @@
-import { Box, Paper, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { Hero } from "../../shared/hero";
 import { QuoteCard } from "../../shared/quote";
 import teamPic from "../../assets/teamPic.jpg";
-import { largeView, mobileView } from "../../styles/constants";
-import { COMPANY_NAME } from "../../lib";
+import { mobileView } from "../../styles/constants";
 import { Approach } from "./approach";
 import { holleyBio } from "../../lib/holleyBio";
 import { TeamMemberBio } from "../../shared/teamMemberBiography";
 import holley from "../../assets/holley.jpeg";
-// import harold from "../../assets/harold.jpg";
+import harold from "../../assets/harold.jpg";
 import { haroldBio } from "../../lib/haroldBio";
 import { CTACard } from "../../shared/cta";
 import { Footer } from "../../shared/footer";
 
 export const AboutPage = () => {
   const { isMobile } = mobileView();
-  const { isLargeScreen } = largeView();
 
   return (
     <Box
       className="top-box"
-      sx={{ height: "inherit", width: "inherit", overflow: "scroll" }}
+      sx={{
+        height: "inherit",
+        width: "inherit",
+        overflowY: "scroll",
+        overflowX: "hidden",
+      }}
     >
       <Hero
         img={teamPic}
@@ -29,37 +32,47 @@ export const AboutPage = () => {
         page={"home"}
         webHeight="30dvh"
         children={
-          <Paper
-            elevation={3}
+          <Box
             sx={{
-              mt: 30,
-              padding: isMobile ? "10px 0" : 0,
-              width: isMobile ? "80%" : "425px",
-              marginLeft: isMobile ? 0 : isLargeScreen ? 10 : 5,
-              minHeight: "200px",
-              maxWidth: "700px",
-              opacity: 0.7,
               display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-evenly",
-              alignItems: "center",
+              textShadow: isMobile ? "0 0 10px #000" : "",
             }}
           >
-            <Typography sx={{ paddingRight: 3, paddingLeft: 3 }} variant="h5">
-              {COMPANY_NAME}
+            <Typography variant="h2" color={isMobile ? "white" : "black"}>
+              About Us
             </Typography>
-            <Typography
-              sx={{ paddingRight: 3, paddingLeft: 3 }}
-              variant="body2"
-              gutterBottom
-            >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-              faucibus sapien nec sapien interdum. Aenean varius, nisl ac
-              vehicula dapibus, erat lorem fermentum velit. Curabitur efficitur,
-              nisl vitae sollicitudin aliquam, erat libero tempus nulla. Nam
-              malesuada lacus non ligula posuere, at gravida sem suscipit.
-            </Typography>
-          </Paper>
+          </Box>
+          // <Paper
+          //   elevation={3}
+          //   sx={{
+          //     mt: 30,
+          //     padding: isMobile ? "10px 0" : 0,
+          //     width: isMobile ? "80%" : "425px",
+          //     marginLeft: isMobile ? 0 : isLargeScreen ? 10 : 5,
+          //     minHeight: "200px",
+          //     maxWidth: "700px",
+          //     opacity: 0.7,
+          //     display: "flex",
+          //     flexDirection: "column",
+          //     justifyContent: "space-evenly",
+          //     alignItems: "center",
+          //   }}
+          // >
+          //   <Typography sx={{ paddingRight: 3, paddingLeft: 3 }} variant="h5">
+          //     {COMPANY_NAME}
+          //   </Typography>
+          //   <Typography
+          //     sx={{ paddingRight: 3, paddingLeft: 3 }}
+          //     variant="body2"
+          //     gutterBottom
+          //   >
+          //     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+          //     faucibus sapien nec sapien interdum. Aenean varius, nisl ac
+          //     vehicula dapibus, erat lorem fermentum velit. Curabitur efficitur,
+          //     nisl vitae sollicitudin aliquam, erat libero tempus nulla. Nam
+          //     malesuada lacus non ligula posuere, at gravida sem suscipit.
+          //   </Typography>
+          // </Paper>
         }
       />
       <QuoteCard
@@ -80,7 +93,15 @@ export const AboutPage = () => {
           flexDirection: "column",
         }}
       >
-        <Typography variant="h2" gutterBottom>
+        <Typography
+          sx={[
+            { fontWeight: 800, fontSize: isMobile ? "45px" : "60px" },
+            (theme) => ({
+              color: theme.palette.primary.dark,
+            }),
+          ]}
+          gutterBottom
+        >
           Meet the Team
         </Typography>
         <Box
@@ -92,7 +113,7 @@ export const AboutPage = () => {
             flexDirection: isMobile ? "column" : "row",
           }}
         >
-          <Box>
+          <Box sx={{ marginBottom: isMobile ? 5 : 0 }}>
             <Box
               sx={{
                 backgroundImage: `url(${holley})`,
@@ -126,7 +147,7 @@ export const AboutPage = () => {
           <Box>
             <Box
               sx={{
-                backgroundImage: `url(${holley})`,
+                backgroundImage: `url(${harold})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center left 25%",
                 backgroundRepeat: "no-repeat",
@@ -196,7 +217,7 @@ export const AboutPage = () => {
       />
       <Box aria-hidden="true" sx={{ marginTop: 3 }} />
       <TeamMemberBio
-        image={holley}
+        image={harold}
         alt={"Biofrequency-Technician"}
         bioHeading={
           <>

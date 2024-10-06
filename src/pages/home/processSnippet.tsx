@@ -54,7 +54,6 @@ export const OurProcessSnippet = () => {
       <Typography
         variant="subheading"
         gutterBottom
-        component="p"
         sx={{
           width: "95%",
         }}
@@ -101,7 +100,6 @@ export const OurProcessSnippet = () => {
               </Typography>
               <Divider sx={{ margin: "10px 0" }} />
               <Typography
-                component="p"
                 sx={{ fontSize: "13pt", marginTop: 2, textAlign: "center" }}
               >
                 {step.description}

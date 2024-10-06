@@ -11,6 +11,7 @@ import harold from "../../assets/harold.jpg";
 import { haroldBio } from "../../lib/haroldBio";
 import { CTACard } from "../../shared/cta";
 import { Footer } from "../../shared/footer";
+import { ServicesSnippet } from "../home/serviceSnippet";
 
 export const ServicesPage = () => {
   const { isMobile } = mobileView();
@@ -18,7 +19,12 @@ export const ServicesPage = () => {
   return (
     <Box
       className="top-box"
-      sx={{ height: "inherit", width: "inherit", overflow: "scroll" }}
+      sx={{
+        height: "inherit",
+        width: "inherit",
+        overflowY: "scroll",
+        overflowX: "hidden",
+      }}
     >
       <Hero
         img={heroPhoto}
@@ -49,92 +55,7 @@ export const ServicesPage = () => {
         num={1}
       />
       <Box aria-hidden="true" sx={{ marginTop: 5 }} />
-      <Box
-        sx={{
-          width: "100%",
-          display: "flex",
-
-          justifyContent: "center",
-          alignItems: "center",
-          flexDirection: "column",
-        }}
-      >
-        <Typography variant="h2" gutterBottom>
-          Meet the Team
-        </Typography>
-        <Box
-          sx={{
-            width: "800px",
-            display: "flex",
-            justifyContent: "space-evenly",
-            alignItems: "center",
-            flexDirection: isMobile ? "column" : "row",
-          }}
-        >
-          <Box>
-            <Box
-              sx={{
-                backgroundImage: `url(${holley})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center left 25%",
-                backgroundRepeat: "no-repeat",
-                height: isMobile ? "300px" : "375px",
-                width: isMobile ? "250px" : "275px",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: isMobile ? "center" : "flex-start",
-                justifyContent: "center",
-                borderRadius: 2,
-              }}
-            />
-            <Typography
-              sx={{
-                fontSize: "1.75rem",
-                marginTop: 2,
-                fontWeight: 750,
-              }}
-            >
-              Holley
-            </Typography>
-            <Typography
-              sx={{ color: "gray", fontSize: "1.25rem", fontStyle: "italic" }}
-            >
-              Naturopathy Practictioner
-            </Typography>
-          </Box>
-          <Box>
-            <Box
-              sx={{
-                backgroundImage: `url(${harold})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center left 25%",
-                backgroundRepeat: "no-repeat",
-                height: isMobile ? "300px" : "375px",
-                width: isMobile ? "250px" : "275px",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: isMobile ? "center" : "flex-start",
-                justifyContent: "center",
-                borderRadius: 2,
-              }}
-            />
-            <Typography
-              sx={{
-                fontSize: "1.75rem",
-                marginTop: 2,
-                fontWeight: 750,
-              }}
-            >
-              Harold Gilbert
-            </Typography>
-            <Typography
-              sx={{ color: "gray", fontSize: "1.25rem", fontStyle: "italic" }}
-            >
-              Biorequency Technician
-            </Typography>
-          </Box>
-        </Box>
-      </Box>
+      <ServicesSnippet />
       <Box aria-hidden="true" sx={{ marginTop: 5 }} />
       <Approach />
       <Box aria-hidden="true" sx={{ marginTop: 4 }} />

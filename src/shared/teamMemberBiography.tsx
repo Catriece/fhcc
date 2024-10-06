@@ -93,7 +93,6 @@ export const TeamMemberBio: FC<TeamMember> = ({
               <Typography id="team-member-biography" variant="body1">
                 {page === "home" ? (
                   <Typography
-                    component="p"
                     key={index}
                     sx={{
                       textIndent: "40px",
@@ -106,7 +105,6 @@ export const TeamMemberBio: FC<TeamMember> = ({
                 ) : (
                   biography.map((paragraph, index) => (
                     <Typography
-                      component="p"
                       key={index}
                       sx={{
                         textIndent: "40px",

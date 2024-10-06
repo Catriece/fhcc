@@ -31,7 +31,6 @@ function App() {
   const handleNavigate = (path: string) => () => {
     const top = document.getElementById("top");
     top?.scrollTo({ top: 0, left: 0 });
-    console.log("Top: ", top);
     navigate(path);
     setAnchorEl(null);
   };
